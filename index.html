@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotion Recognition Web App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='file.css') }}"> <!-- Link to external CSS file -->
+</head>
+<body>
+    <div class="container">
+        <h1>Emotion Recognition Web App</h1>
+        
+        <form action="/predict" method="post" enctype="multipart/form-data" id="upload-form">
+            <label for="image">Upload Image:</label>
+            <input type="file" name="image" id="image-input" accept="image/*">
+            <button type="submit" id="predict-button">Predict</button>
+        </form>
+
+        <div class="result-section">
+            <h2>Results:</h2>
+            <p id="prediction-text">{{ prediction }}</p>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='file.js') }}"></script> <!-- Link to external JavaScript file -->
+</body>
+</html>
